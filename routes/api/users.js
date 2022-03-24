@@ -14,8 +14,8 @@ const User = require('../../models/User');
 // @access   Public
 router.post(
   '/',
-  check('name', 'Name is required').notEmpty(),
-  check('email', 'Please include a valid email').isEmail(),
+  check('email', 'Please enter a valid email').isEmail().contains(['@vsit.edu.in']),
+    check('password', 'Password is required').exists(),
   check(
     'password',
     'Please enter a password with 6 or more characters'
